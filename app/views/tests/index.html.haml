@@ -1,0 +1,17 @@
+%h2
+  %center Test Result
+%table.table
+  %thead
+    %tr
+      %th
+        %center Test Url
+      %th
+        %center Test Status
+  %tbody
+    - @tests.each do |test|
+      %tr
+        %td
+          %center= link_to test.service_url
+%br/
+= link_to 'New Test', new_test_path
+

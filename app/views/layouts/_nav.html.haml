@@ -1,0 +1,14 @@
+%nav.navbar.fixed-top.navbar-expand-sm.navbar-dark.bg-dark
+  .container
+    #nav-content.collapse.navbar-collapse
+    %ul.nav.navbar-nav
+      %li.nav-item
+        %a.nav-link{:href => "#{home_index_path}"} Home
+      / Dropdown  
+      %li.nav-item.dropdown
+        %a#navbardrop.nav-link.dropdown-toggle{"data-toggle" => "dropdown"}
+          Tests
+        .dropdown-menu
+          %a.dropdown-item{:href => "#{tests_path}"} test's result
+          %a.dropdown-item{:href => "#{new_test_path}"} new test
+    

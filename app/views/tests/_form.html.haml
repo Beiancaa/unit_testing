@@ -1,0 +1,24 @@
+.form-dark
+  .card
+    .text-green.rgba-stylish-strong.py-5.px-5.z-depth-4
+      = form_with(model: test, local: true) do |f|
+        - if test.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(test.errors.count, "error")
+              prohibited this test from being saved:
+            %ul
+              - test.errors.full_messages.each do |message|
+                %li= message
+
+        .form-group
+          = f.label :service_url
+          %br/
+          = f.url_field :service_url,class: "form-control"
+        %br/
+        .actions
+          %center
+            %button.btn{:type => "submit"} Start test
+        %center    
+          = link_to 'Back', tests_path    
+          
