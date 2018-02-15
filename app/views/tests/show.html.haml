@@ -1,9 +1,0 @@
-%p#notice= notice
-%p
-  %strong Service Url:
-  = @test.service_url
-= link_to 'Edit', edit_test_path(@test)
-|
-= link_to 'Back', tests_path
-|
-= link_to 'Delete', @profile, method: :delete, data: { confirm: 'Are you sure?' }

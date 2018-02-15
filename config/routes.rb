@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+  
   get 'home/index'
-  resources :tests
+  resources :test_activities
   root 'home#index'
 end

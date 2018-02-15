@@ -1,0 +1,59 @@
+.form-dark
+  .card
+    .text-green.rgba-stylish-strong.py-5.px-5.z-depth-4
+      = form_with(model: @test_activity, local: true) do |f|
+        - if @test_activity.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(test_activity.errors.count, "error")
+              prohibited this test from being saved:
+            %ul
+              - test_activity.errors.full_messages.each do |message|
+                %li= message
+
+        .form-group
+          = f.label :activity_url
+          %br/
+          = f.url_field :activity_url,class: "form-control"
+        %br/
+        .form-group
+          = f.label :client_id
+          %br/
+          = f.text_field :client_id,class: "form-control"  
+        %br/  
+        .form-group
+          = f.label :case_id
+          %br/
+          = f.text_field :case_id,class: "form-control"  
+        %br/
+        .form-group
+          = f.label :created_by
+          %br/
+          = f.text_field :created_by,class: "form-control"  
+        %br/
+        .form-group
+          = f.label :activity_type
+          %br/
+          = f.text_field :activity_type,class: "form-control"  
+        %br/
+        .form-group
+          = f.label :activity_code
+          %br/
+          = f.text_field :activity_code,class: "form-control"  
+        %br/
+        .form-group
+          = f.label :description
+          %br/
+          = f.text_field :description,class: "form-control"  
+        %br/
+        .form-group
+          = f.label :environment_id
+          %br/
+          = f.text_field :environment_id,class: "form-control"  
+        %br/
+        .actions
+          %center
+            %button.btn{:type => "submit"} Start test
+        %center    
+          = link_to 'Back', test_activities_path, class: "btn btn-primary"    
+          

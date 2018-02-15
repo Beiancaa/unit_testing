@@ -1,0 +1,26 @@
+%h2 
+  %center Activity Results
+%table.table
+  %thead
+    %tr
+      %th
+        %center Activity Status  
+      %th
+      %th
+      %th
+
+  %tbody
+    - @test_activities.each do |test_activity|
+      %tr
+        %td
+          %center= test_activity.status  
+        %td
+          %center= link_to 'Show', test_activity
+        %td
+          %center= link_to 'Edit', edit_test_activity_path(test_activity)
+        %td
+          %center= link_to 'Destroy', test_activity, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Test activity', new_test_activity_path

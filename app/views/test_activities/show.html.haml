@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Activity status:
+  = @test_activity.status  
+
+= link_to 'Edit', edit_test_activity_path(@test_activity)
+\|
+= link_to 'Back', test_activities_path

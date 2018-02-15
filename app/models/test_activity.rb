@@ -1,0 +1,2 @@
+class TestActivity < ApplicationRecord
+end
